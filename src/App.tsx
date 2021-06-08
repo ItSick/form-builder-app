@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import AddElements from './components/AddElements';
+import FormDetails from './components/FormDetails';
+import FormDisplay from  './components/FormDisplay';
 import './App.css';
 
 function App() {
+  const [formDetails, setFormDetails] = useState({})
+  const [addElements, setAddElements] = useState({})
+  const [formDisplay, setFormDisplay] = useState({})
+
+  useEffect(() => {
+    console.log('hello itsik')
+  },[formDetails, addElements]);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+     <h1>Form Generator</h1>
+          <p>Forms Builder Tool - Easy to use!</p>
+          <hr className="green-box"/>
+      <div className="row">
+        <div className="col-md">
+          <FormDetails initialState={formDetails} setFormDetails={setFormDetails}/>
+          <AddElements initialState={addElements} setAddElements={setAddElements} />
+        </div>
+        <div className="col-md">
+          <FormDisplay initialState={formDisplay} setFormDisplay={setFormDisplay}/>
+        </div>
+      </div> 
+      <div className="row">
+        <button type="button" className="btn btn-success space-up ">Create Form</button> 
+      </div>
     </div>
   );
 }
