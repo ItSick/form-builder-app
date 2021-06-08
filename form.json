@@ -1,0 +1,25 @@
+{
+    "name": "String",
+    "description": "String",
+    "createdBy": "String",//under the hood
+    "updatedBy": "String",//under the hood
+    "hostingApps": [],//under the hood
+      "fields": [{
+        "id": "",
+        "name": "",
+        "order": 0,
+        "mandatory": "",
+        "attributes": [{
+          "key": "",
+          "value":""
+        }],
+        "style": [{
+          "key": "",
+          "value":""
+        }],
+        "validation": [{
+          "id": "",
+          "regex": ""
+        }]
+      }]
+}
